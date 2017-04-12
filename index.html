@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <!--Plotly-->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!--jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    <!--lodash-->
+    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+    <!--JavaScript-->
+    <script src="js/viz.js"></script>
+    <title>A1-Design: Wonder Drugs</title>
+</head>
+<body>
+    <header>
+        <!--TO-DO: Make jumbotron span throughout the screen-->
+        <div class="jumbotron jumbotron-fluid" >
+            <div class="container">
+                <h1 class="display-2"> Wonder Drugs of the 20th Century: Antibiotics</h1>
+                <h3 class="lead">After World War II, antibiotics were considered as "wonder drugs", as they appeared as an easy remedy for what had been intractable and often deathly ailments. To learn which drug worked most effectively for which bacterial infection, performance of the three most popular antibiotics on 16 bacteria were gathered and presented in the following visualizations.</h3> 
+            </div>
+        </div>
+    </header>
+    <main>
+        <article id="1">
+        <div class="container-fluid">
+            <h2 id="article-title">Bacterial Resistance by Gram Staining</h2>
+            <p> This static Bubble Chart illustrates bacterial resistance to antibiotic treatment as a function of MIC. Each bubble in the graph represents a bacteria type and are spread across a negative and positive x-axis, with its negative section holding Gram negative bacteria and its positive holding Gram positive bacteria. This position common scale was chosen to separate bacteria based on their Gram staining due to the terms employed for each category in the domain (positive and negative) and assumed familiarity with separating negative and positive values along the left and right sides of a cartesian plane.</p>
+            <p> Bubbles can be of two colors: blue violet and pink. These two colors were chosen because they represent the actual color bacteria take on after a Gram staining process. In the laboratory, bacteria that attain a blue violet coloring are classified as Gram Negative and those with a pink coloring as Gram Positive. Given that a clear dichotomy already exists on the domain of the visualization, I decided to capitalize on this established knowledge.</p>
+            <p> The size of each bubble is given by the lowest Minimum Inhibitory Concentration (MIC) found among the three types of antibiotic available for each bacteria. The minimum MIC was chosen to represent bacterial resistance because a high MIC, among the lowest MICs for all bacteria, would illustrate what bacteria are hardest to eliminate, even with the most effective treatment available. Finally, the spectrum of each antibiotic, or how many bacteria types can it effectively eliminate as a function of low MIC, is illustrated by how many bubbles fall on each its position on the y-axis.
+            </p>
+        </div>
+            <div class="container-fluid" id="viz-1"></div>
+        </div>
+        </article>
+        <article name="2">
+            <div class="container-fluid">
+            <h2 id="article-title">Antibiotic Spectrum by Gram Staining and MIC</h2>
+            <p>This static horizontal stacked bar chart illustrates the spectrum of each antibiotic type as a function of the count of bacteria that have the lowest MIC for each antibiotic. Antibiotic spectrum can be divided in “high” and “low” and is understood as how many bacteria an antibiotic can effectively eliminate by inhibiting bacterial growth with low concentration of its chemical component.
+            Since this graph is based on a simple count, the x-axis presents a simple real numbers scale that illustrate the number of bacteria with lowest MIC for each antibiotic type. Given that counts are taken for each antibiotic type, the y-axis is divided in three equidistant segments, one for each antibiotic type. </p>
+            <p>Stacked horizontal bars were chosen to illustrate the count of bacteria for each antibiotic to take advantage of a familiar numerical scale in the x-axis as well as magnifying the perceived length and width of each bar and its sub-bars. Each bar has two sub-bars, each represented with a different color. The colors for each sub-bar are blue violet for Gram Negative bacteria and pink for Gram positive bacteria. </p>
+            </div>
+            <div class="container-fluid" id="viz-2"></div>
+            </div>
+        </article>
+        <article name="3">
+            <div class="container-fluid">
+             <h2 id="article-title">MIC Variation by Bacteria Type and Antibiotic Type</h2>
+                <p>This static boxplot chart illustrates the variation in MIC each antibiotic type has for Gram Positive and Gram Negative bacteria. From previous graphs, we have learned that Gram negative bacteria are, on average, more resistant to antibacterial treatment thus having higher MICs, even for the most effective treatment available. Thus, this graph focuses on visualizing which antibiotics are more effective at treating Gram positive and negative bacteria, understood as having lower MICs and lesser variation between MIC values for each bacteria. </p> 
+                <p>A grouped boxplot chart was chosen so that data could be firstly divided based on gram staining and secondly by type of antibiotic. The x-axis is divided by Gram staining: Positive and Negative. Once again, I have capitalized on the layout for positive and negative values of x-axes in cartesian planes by placing the Negative section on the left and the Positive section on the right of the axis. The y-axis consists of a logarithmic scale of MIC values for all 16 bacteria. A logarithmic scale was chosen due to the large range of the MIC data subset. Finally, colors for each box in the graph do not carry any intrinsic meaning as in previous graphs. The only criteria applied when choosing a color for each graph was that each color needed to be as distinct as possible from the next as to not incite the identification of false relationships between antibiotics/boxes. </p>
+            </div>
+         <div class="container-fluid" id="viz-3">
+        </div>
+        </article>
+    </main>
+    <footer>
+        <div class="container-fluid">
+            <p>Domenica Mata | INF0 474 Spring 2017</p>
+        </div>
+    </footer>
+</body>
+</html>
