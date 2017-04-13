@@ -63,7 +63,7 @@ $(document).ready(function() {
           function scaler(rows, scale){
            var target = [];
             for(var i = 0; i < rows.length; i++){
-                var currentSize = Math.log10(rows[i]) + 3;
+                var currentSize = Math.log10(rows[i] + 3);
                 target.push(currentSize);
             }
             return target;
