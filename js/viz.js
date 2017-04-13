@@ -14,10 +14,6 @@ $(document).ready(function() {
                 data.push(row);
             });
 
-        function unpackNum(rows, key){
-            return rows.map(function(row){return +row[key];})
-        }
-
         function assignPos(){
             var mapping = [];
             var pos = 0;
@@ -44,20 +40,6 @@ $(document).ready(function() {
                 mapping= _.sortBy(mapping, ['pos']);
             }); 
             return mapping;
-        }
-
-        function mostEffectiveAntib(rows){
-            var mostEffective = rows.map(function(row){
-                var min = Math.min(row[1], row[2], row[3]);
-                if(min === row[1]){
-                    return "Penicilin";
-                } else if(min === row[2]){
-                    return "Streptomycin";
-                } else if(min === row[3]){
-                    return "Neomycin";
-                }
-            })
-            return mostEffective;
         }
 
           function scaler(rows, scale){
