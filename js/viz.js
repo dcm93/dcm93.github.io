@@ -63,10 +63,9 @@ $(document).ready(function() {
           function scaler(rows, scale){
            var target = [];
             for(var i = 0; i < rows.length; i++){
-                var currentSize = Math.log10(rows[i] + 3);
+                var currentSize = Math.log10(rows[i] + 3) *100;
                 target.push(currentSize);
             }
-            console.log(target);
             return target;
        }
 
@@ -94,7 +93,7 @@ $(document).ready(function() {
        var mappingBubble = assignPos(), 
         gramPos = mapOut("positive", mappingBubble),
         gramNeg = mapOut("negative", mappingBubble);
-
+     
         var gramPosPosition = gramPos[0],
             mostEffectivePos = gramPos[1], 
             micSizePos = gramPos[2],
@@ -139,7 +138,7 @@ $(document).ready(function() {
             title: 'Bacteria classification by Gram Staining & Most Effective Antibiotic Treatment', 
             showlegend:true,
             height:600, 
-            width:600, 
+            width:1200, 
             xaxis:{
                 tickmode:'array', 
                 tickvals: xValues,
@@ -237,27 +236,27 @@ $(document).ready(function() {
         })
         // 9 gram- -> 27 entries 
         // 7 gram+ -> 21 entries
-        var xlabels = repeat('Negative', 9).concat(repeat('Positive', 7));
+        var xlabels = repeat('Gram Negative', 9).concat(repeat('Gram Positive', 7));
         var penicilinNeg = dataNeg.map(function(row){
-            return row[0];
+            return Math.log10(row[0] + 3);
         })
         var streptomycinNeg = dataNeg.map(function(row){
-            return row[1];
+            return Math.log10(row[1] + 3);
         })
 
         var neomycinNeg = dataNeg.map(function(row){
-            return row[2];
+            return Math.log10(row[2] + 3);
         })
 
         var penicilinPos = dataPos.map(function(row){
-            return row[0];
+            return Math.log10(row[0] + 3);
         })
         var streptomycinPos = dataPos.map(function(row){
-            return row[1];
+            return Math.log10(row[1] + 3);
         })
 
         var neomycinPos = dataPos.map(function(row){
-            return row[2];
+            return Math.log10(row[2] + 3);
         })
 
         var tracePenicilin = {
