@@ -138,7 +138,7 @@ $(document).ready(function() {
             title: 'Bacteria classification by Gram Staining & Most Effective Antibiotic Treatment', 
             showlegend:true,
             height:600, 
-            width:1200, 
+            width:600, 
             xaxis:{
                 tickmode:'array', 
                 tickvals: xValues,
