@@ -66,6 +66,7 @@ $(document).ready(function() {
                 var currentSize = Math.log10(rows[i] + 3);
                 target.push(currentSize);
             }
+            console.log(target);
             return target;
        }
 
